@@ -42,6 +42,16 @@ AS $$
       AND p.string_value LIKE '%.' || extension;
 $$;
 
+CREATE OR REPLACE FUNCTION alfsneak.n_alf_node_properties()
+RETURNS BIGINT
+LANGUAGE SQL
+AS $$
+    SELECT n_live_tup
+    FROM pg_catalog.pg_stat_user_tables
+    WHERE schemaname = 'public'
+    AND relname = 'alf_node_properties';
+$$;
+
 -- Finding documents per content store
 
 CREATE OR REPLACE FUNCTION alfsneak.n_docs_per_store(

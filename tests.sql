@@ -6,6 +6,7 @@ SELECT n_nodes_by_qname('user');
 SELECT n_users();
 SELECT n_nodes_by_qname('content');
 SELECT n_all_docs();
+SELECT n_alf_node_properties();
 
 -- Number of docs
 SELECT n_docs_by_extension('xml');
